@@ -1,3 +1,26 @@
+To Run this project follow these setps:
+* Create a folder name with "weather app".
+*  Now create "index.html" file and copy the code.
+*  Now create "custom.css" file and copy the code.
+*  Now create "app.js" file and copy the code. 
+*  Please carefully check the link tags in "index.html" is it properly linlking the file or not.
+*  Now open the folder on vs code and open the "index.html" file in live server.
+*  Thannk You for your time and consideration. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Weather App Documentation
 Overview
 This weather app allows users to search for weather updates for a specific city. It displays current weather information, including temperature, pressure, humidity, and wind speed. Additionally, it shows a 5-day weather forecast using a swiper component for user-friendly navigation.
