@@ -76,7 +76,7 @@ var swiper = new Swiper(".mySwiper", {
 //creating a function named gettingWeatherDetails
   function gettingWeatherDetails(cityWeather, lat, lon)
   {
-      const weather_api_url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+      const weather_api_url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
       fetch(weather_api_url).then(res=>res.json()).then(data=>{
 
