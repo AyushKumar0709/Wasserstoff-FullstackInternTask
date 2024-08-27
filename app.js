@@ -116,32 +116,27 @@ var swiper = new Swiper(".mySwiper", {
   }
 
 //working on search Button 
-  searchBtn.addEventListener('click',function(){
-      const cityName = cityNameInput.value.trim();//trim to remove extra spaces
-      if(cityName == "")
-          {
-              alert("Please Enter the City Name");
-              return;
-          }
-      else
-      {
-          const geocoding_api_url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
-          fetch(geocoding_api_url).then(res =>res.json()).then(data=>{
-              if(!data.length) //if you enter wrong keyword or city name
-              {
-                  return alert(`${cityName} isn't a valid city Name`);
-              }
-              else
-              {
-                  const { name,lat,lon } = data[0]; //storing the value of Name,latitute and value of longitude in data array
-                  gettingWeatherDetails(name, lat, lon);//Now We have to create a function named gettingWeatherDetails
-              }
-                  
-              
-              // console.log(data);
+searchBtn.addEventListener('click', function() {
+    const cityName = cityNameInput.value.trim(); // trim to remove extra spaces
+    if (cityName == "") {
+        alert("Please Enter the City Name");
+        return;
+    } else {
+        const geocoding_api_url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+        fetch(geocoding_api_url)
+            .then(res => res.json())
+            .then(data => {
+                if (!data.length) { // if you enter wrong keyword or city name
+                    return alert(`${cityName} isn't a valid city Name`);
+                } else {
+                    const { name, lat, lon } = data[0]; // storing the value of Name, latitude and value of longitude in data array
+                    gettingWeatherDetails(name, lat, lon); // Now We have to create a function named gettingWeatherDetails
+                }
+            })
+            .catch(error => {
+                console.error("Error occurred while fetching the coordinates:", error);
+                alert("Error Occurred While Fetching the Coordinates");
+            });
+    }
+});
 
-          }).catch(()=>{
-              alert("Error Occured While Fetching the Coordinates");
-          })
-      }
-  })
