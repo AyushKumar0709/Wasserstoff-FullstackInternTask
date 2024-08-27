@@ -125,7 +125,7 @@ var swiper = new Swiper(".mySwiper", {
           }
       else
       {
-          const geocoding_api_url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+          const geocoding_api_url = "http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}";
           fetch(geocoding_api_url).then(res =>res.json()).then(data=>{
               if(!data.length) //if you enter wrong keyword or city name
               {
